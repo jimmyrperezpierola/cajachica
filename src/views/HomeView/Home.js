@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 const Home = props => {
     React.useEffect(() => {
         if (props.notification) {
-            if (props.notification != "Data not found") {
+            if (props.notification !== "Data not found") {
                 props.clearNotificationStarter();
                 props.clearNotification();
             }
@@ -15,7 +15,7 @@ const Home = props => {
 
     return (
         <>
-            <h1>Home</h1>
+            <h1>Home!!</h1>
         </>
     );
 } 

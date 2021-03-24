@@ -6,7 +6,7 @@ import { loadNotification, clearNotification } from '../../actions/notification'
 import { Redirect } from 'react-router-dom';
 
 
-const SignIn = props => {
+const SignIn = (props) => {
 
     const initialState = {
         email: '',

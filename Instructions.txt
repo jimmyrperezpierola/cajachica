@@ -1,0 +1,9 @@
+		Install
+1.- npm install --save react-router-dom
+2.- npm i react-redux
+3.- npm i redux-devtools-extension
+4.- npm i redux-thunk
+5.- npm i axios
+6.- npm i jwt-decode
+7.- npm i redux
+

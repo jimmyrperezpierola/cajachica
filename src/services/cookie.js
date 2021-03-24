@@ -11,7 +11,7 @@
 export const setCookie = (data) => {
     for (let i = 0; i < data.length; i++) {
         let date = new Date();
-        if (data[i].name == "access_token") {
+        if (data[i].name === "access_token") {
             date.setTime(date.getTime() + (data[i].expiry * 3600 * 1000));
         } else {
             date.setTime(date.getTime() + (data[i].expiry * 24 * 60 * 60 * 1000));

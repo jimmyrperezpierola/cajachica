@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 import PATHS from '../../routes';
 
 
-const SignUp = props => {
+const SignUp = (props) => {
     const initialState = {
         email: '',
         password: '',
