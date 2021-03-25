@@ -15,15 +15,17 @@ const SignUp = (props) => {
         last_name: ''
     }
 
-    useEffect(() => {
-        props.loadNotification(props.notification, props.notificationType);
-    }, [props.notification]);
+    const {notification, notificationType } = props;
 
     useEffect(() => {
-        if (props.notification) {
-            props.clearNotificationStarter();
+        loadNotification(notification, notificationType);
+    }, [notification, notificationType]);
+
+    useEffect(() => {
+        if (notification) {
+            clearNotificationStarter();
         }
-    }, []);
+    }, [notification]);
 
 
     const [state, setState] = useState(initialState);

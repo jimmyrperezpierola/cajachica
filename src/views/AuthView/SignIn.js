@@ -13,18 +13,20 @@ const SignIn = (props) => {
         password: ''
     }
 
+    const {notification, notificationType } = props;    
+
     useEffect(() => {
-        if (props.notification) {
-            props.clearNotificationStarter();
+        if (notification) {
+            clearNotificationStarter();
         }
-    }, []);
+    }, [notification]);
     
     const [state, setState] = useState(initialState);
     const [error, setError] = useState(initialState);
 
     React.useEffect(() => {
-        props.loadNotification(props.notification, props.notificationType);
-    }, [props.notification])
+        loadNotification(notification, notificationType);
+    }, [notification, notificationType])
 
     if (props.isAuthenticated) {
         return <Redirect to='/' />;
