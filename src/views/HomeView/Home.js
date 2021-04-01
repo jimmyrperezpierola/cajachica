@@ -2,9 +2,13 @@ import React from 'react';
 import { loadNotification, clearNotification } from '../../actions/notification';
 import { clearNotificationStarter } from '../../actions/auth';
 import { connect } from 'react-redux';
+import {firebaseConection} from '../../config/firebase';
+import HeroSection from '../../components/HeroSection/HeroSection';
+import { homeWelcome } from './Data';
 
 const Home = props => {
     React.useEffect(() => {
+        firebaseConection();         
         if (props.notification) {
             if (props.notification !== "Data not found") {
                 props.clearNotificationStarter();
@@ -15,7 +19,7 @@ const Home = props => {
 
     return (
         <>
-            <h1>Home4</h1>
+            <HeroSection {...homeWelcome} />             
         </>
     );
 } 

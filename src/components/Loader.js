@@ -7,9 +7,9 @@ const Loader = props => {
             {
                 props.loading && <div className="loader">
                     <section className="loading verticle-align text-center">
+                        {/* <div className="circle">Loading...</div> */}
                         <div className="circle">Loading...</div>
-                        <div className="circle">Loading...</div>
-                        <div className="circle">Loading...</div>
+                        {/* <div className="circle">Loading...</div> */}
                     </section>
                 </div>
             }

@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { connect, useDispatch } from 'react-redux';
-import PATHS from '../routes';
-import { logout } from '../actions/auth';
+import PATHS from '../../../routes';
+import { logout } from '../../../actions/auth';
 
 
 const MobileNavbar = props => {
@@ -16,7 +16,7 @@ const MobileNavbar = props => {
                         <span onClick={() => dispatch(logout())} className="logout-btn">Logout</span>
                     </div>
                     <div className="option">
-                        <Link to={PATHS.ADD_BOOK}>Add book</Link>
+                        <Link to={PATHS.ADD_BOOK}>Caja Chica</Link>
                     </div>
                 </> : <>
                         <div className="option">

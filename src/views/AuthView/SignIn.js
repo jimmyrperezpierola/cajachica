@@ -4,7 +4,7 @@ import { signIn } from './Components/Validation';
 import { login, clearNotificationStarter } from '../../actions/auth';
 import { loadNotification, clearNotification } from '../../actions/notification';
 import { Redirect } from 'react-router-dom';
-
+import './SignIn.css';
 
 const SignIn = (props) => {
 

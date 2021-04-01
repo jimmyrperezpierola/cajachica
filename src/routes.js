@@ -1,8 +1,8 @@
 const PATHS = {
     HOME: '/',
     BOOKS_DETAIL: '/book/:id',
-    SIGN_IN: '/sign-in',
-    SIGN_UP: '/sign-up',
+    SIGN_IN: '/signin',
+    SIGN_UP: '/signup',
     SEARCH: '/search',
     ADD_BOOK: '/add-book',
     EDIT_BOOK: '/edit-book/:id',

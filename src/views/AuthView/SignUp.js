@@ -30,8 +30,9 @@ const SignUp = (props) => {
 
     const [state, setState] = useState(initialState);
     const [error, setError] = useState(initialState);
-
+    console.log('props.isAuthenticated: ' + props.isAuthenticated);
     if (props.isAuthenticated) {
+        console.log('Redirect to HOME');
         return <Redirect to={PATHS.HOME} />;
     }
 
@@ -54,8 +55,11 @@ const SignUp = (props) => {
             setError({ ...error, ...val });
         } else {
             // Submit
+            console.log('props.flash: ' + props.flash + ' - props.notificationType: ' + props.notificationType); 
             props.signUpUser(state);
+            console.log('props.flash: ' + props.flash + ' - props.notificationType: ' + props.notificationType);            
             setState(initialState);
+            console.log('Usuario guardado en base de datos!');
         }
     }
 

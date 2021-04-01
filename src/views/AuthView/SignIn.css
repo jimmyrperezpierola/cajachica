@@ -1,0 +1,36 @@
+.signIn {
+    margin-top: 29px;
+    margin-bottom: 43px;    
+    font-family: 'Poppins';
+    /*font-size: 14px;*/
+    /* width: 30%;
+    border: 1px solid #d2cdcd;
+    padding: 20px 25px;     */
+}
+
+/* .center {
+    margin: 0 auto !important;
+} */
+
+.signIn > .page-title {
+    color: #1e1b1b;
+    font-size: 30px;
+    border: 0;
+}
+
+.signIn > .signIn-container {
+    margin-top: 20px;
+}
+
+.form-group >.submit {
+    padding: 10px;
+    border: 0;
+    outline: none;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    background: #276afb;
+    width: 93px;
+    height: 43px;
+}

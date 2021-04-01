@@ -18,6 +18,9 @@ const initialState = {
 };
 
 export default function (state = initialState, action) {
+    //console.log('action.type: ' + action.type);
+    //console.log('state.accessToken: ' + state.accessToken);
+
     switch (action.type) {
         case USER_LOADING:
             if (state.accessToken) {
