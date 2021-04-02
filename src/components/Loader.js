@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import './Loader.css';
 
 const Loader = props => {
     return (
@@ -8,7 +9,7 @@ const Loader = props => {
                 props.loading && <div className="loader">
                     <section className="loading verticle-align text-center">
                         {/* <div className="circle">Loading...</div> */}
-                        <div className="circle">Loading...</div>
+                        <div className="lds-dual-ring">Cargando...</div>
                         {/* <div className="circle">Loading...</div> */}
                     </section>
                 </div>
