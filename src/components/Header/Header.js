@@ -10,8 +10,10 @@ import './Header.css';
 const Header = (props) => {
     const dispatch = useDispatch();
     const isAuth = useSelector(state => state.auth);
-    const [click, setClick] = useState(false);
-    const [button, setButton] = useState(true);
+    const [click, setClick] = useState(false);//const [click, setClick] = useState(false);
+    const [button, setButton] = useState(true);//const [button, setButton] = useState(true);
+
+    const closeMobileMenu = () => setClick(false);
 
     const showButton = () => {
         if (window.innerWidth <= 960) {
@@ -47,7 +49,20 @@ const Header = (props) => {
                                 </> 
                                 : <>
                                     <li className='nav-btn'>
-                                        <Link to={PATHS.SIGN_IN} className="btn-link"><Button buttonStyle='btn--outline'>SIGN IN</Button></Link> 
+                                        { button ? (
+                                            <Link to={PATHS.SIGN_IN} className="btn-link"><Button buttonStyle='btn--outline'>SIGN IN</Button></Link> 
+                                            ) : (
+                                                <Link to={PATHS.SIGN_IN} className='btn-link'>
+                                                    <Button
+                                                        buttonStyle='btn--outline'
+                                                        buttonSize='btn--mobile'
+                                                        onClick={closeMobileMenu}
+                                                    >
+                                                    SIGN IN
+                                                    </Button>
+                                              </Link>                                                
+                                          )                                            
+                                        }
                                     </li>
                                     {/* <li className='nav-btn'>
                                         <Link to={PATHS.SIGN_UP} className="btn-link"><Button buttonStyle='btn--outline'>SIGN UP</Button></Link> 

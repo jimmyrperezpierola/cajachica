@@ -194,8 +194,6 @@ export const searchBooks = (searchFor, grades, subjects, chapters) => async (dis
     const url = getState().getEndPoint;
     dispatch({ type: START_LOADING })
 
-    const body = JSON.stringify();
-
     try {
         const res = await axios.post(`${url}/search/`, { "search": searchFor, "filters": { "grades": grades, "subjects": subjects, "chapters": chapters } });
         dispatch({ type: STOP_LOADING })

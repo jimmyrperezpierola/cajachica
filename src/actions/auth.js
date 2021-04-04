@@ -1,5 +1,6 @@
 //import axios from 'axios';
-import { firebaseConection, signInWithGoogle, generateUserDocument } from "../config/firebase";
+//import { firebaseConection, signInWithGoogle, generateUserDocument } from "../config/firebase";
+import { firebaseConection, generateUserDocument } from "../config/firebase";
 import firebase from 'firebase';
 
 import {
@@ -32,20 +33,20 @@ export const login = (email, password) => async (dispatch, getState) => {
     console.log('Inside actions/auth/login');
     //console.log('url login: ' + url);
     // Headers
-    const config = {
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    }
+    // const config = {
+    //     headers: {
+    //         'Content-Type': 'application/json'
+    //     }
+    // }
 
     // Request Body
-    const body = JSON.stringify({ email, password })
+    //const body = JSON.stringify({ email, password })
     console.log('...........auth/login.....');
     try {
         firebase.auth().signInWithEmailAndPassword(email, password).then((u)=>{  							
             //this.setState({isSignedIn: true, uid: firebase.auth().currentUser != null? firebase.auth().currentUser.uid: null});  
 
-            const emailVerified = firebase.auth().currentUser.emailVerified;
+            //const emailVerified = firebase.auth().currentUser.emailVerified;
             //this.setState({emailVerified: emailVerified});   							
             
             // if(!emailVerified)
@@ -104,22 +105,22 @@ export const login = (email, password) => async (dispatch, getState) => {
 
 
 export const logout = () => async (dispatch, getState) => {
-    const url = getState().getEndPoint
+    //const url = getState().getEndPoint
 
     // Get token from state
-    const access = getState().auth.accessToken;
-    const refresh = getState().auth.refreshToken;
+    //const access = getState().auth.accessToken;
+    //const refresh = getState().auth.refreshToken;
 
 
     // Request Body
-    const body = JSON.stringify({ 'refreshToken': refresh, 'accessToken': access })
+    //const body = JSON.stringify({ 'refreshToken': refresh, 'accessToken': access })
 
-    const config = {
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${access}`
-        }
-    }
+    // const config = {
+    //     headers: {
+    //         'Content-Type': 'application/json',
+    //         'Authorization': `Bearer ${access}`
+    //     }
+    // }
 
     try {
         //const res = await axios.post(`${url}/logout/`, body, config);

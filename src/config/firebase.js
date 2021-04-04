@@ -24,7 +24,7 @@ const firebaseConfig = {
 
 export const firebaseConection=()=> {
   console.log('..::firebase Connection::..');
-  var connection= {};
+
   if(!firebase.apps.length) {
       firebase.initializeApp(firebaseConfig);
       // firebaseAuth = null; 

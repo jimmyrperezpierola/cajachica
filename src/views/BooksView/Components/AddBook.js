@@ -34,8 +34,8 @@ const AddBook = props => {
         description: ''
     });
 
-    let subject = [];
-    let authors = [];
+    //let subject = [];
+    //let authors = [];
     React.useEffect(() => {
         props.loadNotification(props.notification, props.notificationType);
     }, [props.notification]);
@@ -45,15 +45,6 @@ const AddBook = props => {
             setState(initialState);
         }
     }, [props.flash])
-
-    const subjectDropDown = props.subject.map(k => (
-        subject.push(k)
-    ));
-
-    const authorDropDown = props.author.map(k => (
-        authors.push(k)
-    ));
-
 
     if (!props.isAuthenticated) {
         return <Redirect to='/sign-in' />;
@@ -80,25 +71,6 @@ const AddBook = props => {
         setState({ ...state, [name]: value });
         if (name in error) {
             setError({ ...error, [name]: '' })
-        }
-    }
-    const handleSubject = e => {
-        if (e.__isNew__) {
-            console.log(e)
-        }
-        else {
-            setState({ ...state, subject: e });
-        }
-
-        if ('subject' in error) {
-            setError({ ...error, subject: '' })
-        }
-    }
-
-    const handleAuthor = e => {
-        setState({ ...state, author: e });
-        if ('author' in error) {
-            setError({ ...error, author: '' })
         }
     }
 

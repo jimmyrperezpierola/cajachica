@@ -6,7 +6,7 @@ import { REFRESH_TOKEN_SUCCESS, REFRESH_TOKEN_FAILED, LOGOUT_SUCCESS } from '../
 export const checkTokenExpired = () => async (dispatch, getState) => {
     const access = getState().auth.accessToken;
     const refresh = getState().auth.refreshToken;
-    const url = getState().getEndPoint;
+    //const url = getState().getEndPoint;
 
     if (!refresh) {
         dispatch({ type: LOGOUT_SUCCESS })
@@ -26,7 +26,7 @@ export const checkTokenExpired = () => async (dispatch, getState) => {
        sw = false;
 
     let flag = false;
-    if (sw == true) { //(access !== "undefined") {
+    if (sw === true) { //(access !== "undefined") {
         try {
             const decoded = JwtDecode(access);
             const expired = new Date(decoded.expires);
