@@ -13,7 +13,7 @@ import { loadNotification, clearNotification } from '../../../actions/notificati
 const AddBook = props => {
     React.useEffect(() => {
         props.getImpData();
-    }, []);
+    }, [props]);
     const initialState = {
         title: '',
         grade: '',
@@ -36,15 +36,17 @@ const AddBook = props => {
 
     //let subject = [];
     //let authors = [];
+    const {notification, notificationType } = props; 
+
     React.useEffect(() => {
-        props.loadNotification(props.notification, props.notificationType);
-    }, [props.notification]);
+        loadNotification(notification, notificationType);
+    }, [notification, notificationType]);
 
     React.useEffect(() => {
         if (props.flash) {
             setState(initialState);
         }
-    }, [props.flash])
+    }, [props.flash, initialState])
 
     if (!props.isAuthenticated) {
         return <Redirect to='/sign-in' />;
